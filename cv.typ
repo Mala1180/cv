@@ -46,6 +46,14 @@
 #resume-entry(
   title: university,
   location: "Cesena, Italy",
+  date: "November 2025 - Now",
+  description: "Ph.D. student in Data Science and Computation",
+  title-link: "https://phd.unibo.it/dsc/en",
+)
+
+#resume-entry(
+  title: university,
+  location: "Cesena, Italy",
   date: "September 2022 - March 2025",
   description: "M.Sc. Computer Science and Engineering, 110/110 cum Laude",
   title-link: "https://corsi.unibo.it/2cycle/ComputerScienceEngineering",
@@ -73,7 +81,7 @@
 #resume-entry(
   title: "Research Fellow",
   location: "Cesena, Italy",
-  date: "April 2024 - Now",
+  date: "April 2024 - October 2024",
   description: university,
 )
 #resume-item[
