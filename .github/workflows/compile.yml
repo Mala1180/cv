@@ -6,27 +6,25 @@ on:
     paths-ignore:
       - .gitattributes
       - .gitignore
-      - action.yml
-      - LICENSE
-      - '**.md'
       - LICENSE
       - .github/**
-      - '!.github/workflows/test.yml'
+      - '!.github/workflows/compile.yml'
   pull_request:
     paths-ignore:
       - .gitattributes
       - .gitignore
-      - action.yml
       - LICENSE
-      - '**.md'
       - .github/**
-      - '!.github/workflows/test.yml'
+      - '!.github/workflows/compile.yml'
 
   workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: write
 
 jobs:
   compile:
@@ -35,24 +33,26 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
     
-    - name: Compile Typst Files
-      uses: ammar-ahmed22/compile-typst-action@v1
-      with:
-        source_paths: 'cv.typ'
-        output_paths: 'cv.pdf'
-        fonts_path: 'fonts'
-
+    - name: Setup Typst
+      uses: typst-community/setup-typst@v3
+    
+    - name: Compile CV
+      run: typst compile cv.typ
+    
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
-        name: cv
+        name: cv-pdf
         path: cv.pdf
 
-    - name: Release
+    - name: Generate timestamp
+      id: ts
+      run: echo "tag=cv-$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+
+    - name: Create Release
       uses: softprops/action-gh-release@v2
-      if: github.ref_type == 'tag'
       with:
+        tag_name: ${{ steps.ts.outputs.tag }}
+        name: "${{ steps.ts.outputs.tag }}"
         files: cv.pdf

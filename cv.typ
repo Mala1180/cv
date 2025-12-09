@@ -2,7 +2,6 @@
 
 #let university = "University of Bologna - Alma Mater Studiorum"
 
-
 #show: resume.with(
   author: (
     firstname: "Mattia",
