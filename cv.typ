@@ -127,6 +127,13 @@
 = Relevant Projects
 
 #resume-entry(
+  title: "AGE-ML",
+  location: github-link("Mala1180/age-ml"),
+  date: "2026",
+  description: "A framework for generating and executing end-to-end ML pipelines from human-readable specifications with symbolic reasoning and LLM-based code generation. Corresponding paper under review at FGCS",
+)
+
+#resume-entry(
   title: "Revue",
   location: [#github-link("revue-org/revue")],
   date: "2024",
@@ -147,7 +154,11 @@
 
 #resume-skill-item(
   "Languages",
-  (strong("Scala"), strong("Java"), strong("Python"), strong("JavaScript/TypeScript"), "Kotlin", "Prolog", "C#", "C", "Swift", "SQL", "PHP", "HTML", "CSS/SCSS", "LaTeX",)
+  (strong("Python"), strong("Scala"), strong("Java"), strong("JavaScript/TypeScript"), "Kotlin", "Prolog", "C#", "C", "Swift", "SQL", "PHP", "HTML", "CSS/SCSS", "LaTeX")
+)
+#resume-skill-item(
+  "AI and ML",
+  (strong("LangChain"), strong("LangGraph"), strong("Ollama"), "PyTorch", "Scikit-learn", "Pandas")
 )
 #resume-skill-item(
   "Web Development",
