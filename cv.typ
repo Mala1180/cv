@@ -7,7 +7,7 @@
     firstname: "Mattia",
     lastname: "Matteini",
     email: "mattia.matteini@unibo.it",
-    homepage: "https://www.unibo.it/sitoweb/mattia.matteini",
+    homepage: "https://apice.unibo.it/xwiki/bin/view/MattiaMatteini",
     // phone: "(+1) 111-111-1111",
     github: "Mala1180",
     // twitter: "typstapp",
@@ -95,7 +95,7 @@
   // title-link: "https://github.com/Mala1180",
 )
 #resume-item[
-  - *AI Fairness*: doing reasearch on methodologies to create fair-by-design AI systems.
+  - *AI Fairness*: reasearch on methodologies for creating fair-by-design AI systems.
   - #link("https://www.aequitas-project.eu/")[*Aequitas*] european project.
 ]
 
@@ -157,8 +157,8 @@
   (strong("Python"), strong("Scala"), strong("Java"), strong("JavaScript/TypeScript"), "Kotlin", "Prolog", "C#", "C", "Swift", "SQL", "PHP", "HTML", "CSS/SCSS", "LaTeX")
 )
 #resume-skill-item(
-  "AI and ML",
-  (strong("LangChain"), strong("LangGraph"), strong("Ollama"), "PyTorch", "Scikit-learn", "Pandas")
+  "AI",
+  (strong("LangChain/LangGraph"), strong("Ollama"), "PyTorch", "Scikit-learn", "Pandas")
 )
 #resume-skill-item(
   "Web Development",
@@ -191,5 +191,13 @@
   "./publications.bib",
   title: "Publications",
   full: true,
-  style: "springer-basic",
+  style: "ieee",
 ) 
+
+#bibliography(
+  "./in-press.bib",
+  title: "In Press",
+  full: true,
+  style: "ieee",
+) 
+
