@@ -194,10 +194,12 @@
   style: "ieee",
 ) 
 
-#bibliography(
-  "./in-press.bib",
-  title: "In Press",
-  full: true,
-  style: "ieee",
-) 
+#if read("./in-press.bib").contains(regex("(?m)^\\s*@")) [
+  #bibliography(
+    "./in-press.bib",
+    title: "In Press",
+    full: true,
+    style: "ieee",
+  )
+]
 
